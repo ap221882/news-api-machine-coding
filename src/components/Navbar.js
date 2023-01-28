@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { HEADLINES_API } from "../config";
+import { HEADLINES_API, NEWS_API } from "../config";
 import { updateArticles } from "../slices/articleSlice";
 
 const Navbar = () => {
@@ -8,13 +8,18 @@ const Navbar = () => {
 	const dispatch = useDispatch();
 
 	const updateData = async () => {
-		const data = await fetch(HEADLINES_API + "&country=" + country);
+		const url =
+			country === "All"
+				? NEWS_API
+				: HEADLINES_API + "&country=" + country;
+
+		const data = await fetch(url);
 		const json = await data.json();
 		dispatch(updateArticles(json));
 	};
 
 	useEffect(() => {
-		country !== "All" && updateData();
+		updateData();
 	}, [country]);
 
 	return (

@@ -20,7 +20,7 @@ const CardContainer = () => {
 
 	return (
 		<div className="flex flex-wrap gap-7 p-5 mt-10 items-center justify-center">
-			{articles[0]?.map((article) => (
+			{articles?.map((article) => (
 				<Card article={article} key={article.title} />
 			))}
 		</div>

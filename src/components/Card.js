@@ -6,10 +6,12 @@ const Card = ({ article }) => {
 				src={article?.urlToImage}
 			></img>
 			<h2 className="font-bold">{article?.title}</h2>
-			<p className="">{article?.description.slice(0, 100) + "..."}</p>
+			<p className="">{article?.description?.slice(0, 100) + "..."}</p>
 			<div className="flex justify-between gap-2">
-				<p className="text-slate-600 text-ellipsis">{article.author}</p>
-				<p className="text-slate-600">{article.publishedAt}</p>
+				<p className="text-slate-600 text-ellipsis">
+					{article?.author}
+				</p>
+				<p className="text-slate-600">{article?.publishedAt}</p>
 			</div>
 		</div>
 	);
