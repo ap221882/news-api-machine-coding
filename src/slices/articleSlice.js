@@ -5,7 +5,7 @@ const articleSlice = createSlice({
 	initialState: [],
 	reducers: {
 		updateArticles: (state, action) => {
-			state.push(action.payload.articles);
+			state = state.push(action.payload.articles);
 		},
 	},
 });
