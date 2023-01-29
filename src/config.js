@@ -4,4 +4,4 @@ export const NEWS_API =
 	"https://newsapi.org/v2/everything?q=bitcoin&apiKey=" + APIKEY;
 
 export const HEADLINES_API =
-	"https://newsapi.org/v2/top-headlines/sources?apiKey=" + APIKEY;
+	"https://newsapi.org/v2/top-headlines?category=business&apiKey=" + APIKEY;
